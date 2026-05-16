@@ -1,14 +1,12 @@
 <?php
-$link = mysqli_connect("localhost", "root", "");
+$con = mysql_connect("localhost","root","");
 
-if (!$link) {
-    die("Koneksi gagal: " . mysqli_connect_error());
+if (!$con)
+{
+die('Could not connect: ' . mysql_error());
 }
 
-$dbname = "lat_dbase";
-$cek = mysqli_query($link, "CREATE DATABASE $dbname") or die("Couldn't Create Database: $dbname");
+mysql_select_db("lat_dbase",$con);
 
-if ($cek) {
-    echo "Database $dbname berhasil dibuat";
-}
+mysql_query("DELETE FROM tbl_mhs WHERE LastName='Prabowo'");
 ?>

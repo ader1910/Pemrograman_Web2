@@ -1,23 +1,23 @@
-<?php
-$link = mysqli_connect("localhost", "root", ""); // koneksi
-mysqli_select_db($link, "lat_dbase"); 
+<?
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$dbname = "artikel_db";
 
-// membuat tabel
-$sql = "CREATE TABLE tbl_mhs
-(
-mhsID int NOT NULL AUTO_INCREMENT,
-PRIMARY KEY(mhsID),
-FirstName varchar(15),
-LastName varchar(15),
-Age int
-)";
+//lakukan koneksi dengan mysql
+$connection = mysql_connect($dbhost,$dbuser,$dbpass);
+if(!$connection)
+{
+echo "Tidak dapat terhubung dengan database";
 
-mysqli_query($link, $sql);
+exit;
+}
 
-// input data
-$input = mysqli_query($link, "INSERT INTO tbl_mhs(FirstName,LastName,Age) VALUES('Anjar','Prabowo',25)");
-
-if ($input) {
-    echo "Tabel dan data awal berhasil dibuat!";
+//pilih database
+$pilih_db = mysql_select_db($dbname);
+if(!$pilih_db)
+{
+echo "Tidak dapat memilih database";
+exit;
 }
 ?>

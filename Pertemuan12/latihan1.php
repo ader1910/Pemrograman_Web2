@@ -1,15 +1,14 @@
 <?php
-$servername = 'localhost';
-
-// username and password
-$dbusername = 'root';
-$dbpassword = '';
-
-$link = mysqli_connect($servername, $dbusername, $dbpassword);
-
-if (!$link) {
-    die("Not able to connect to server: " . mysqli_connect_error());
-} else {
-    echo "ok....koneksi berhasil";
+$con = mysql_connect("localhost","root","");
+if (!$con)
+{
+die('Could not connect: ' . mysql_error());
 }
+
+mysql_select_db("lat_dbase", $con);
+
+mysql_query("UPDATE tbl_mhs SET Age = '36'
+WHERE FirstName = 'Karina' AND LastName = 'Suwandi'");
+
+mysql_close($con);
 ?>
