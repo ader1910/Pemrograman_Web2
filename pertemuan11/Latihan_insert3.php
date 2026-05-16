@@ -1,17 +1,17 @@
 <?php
-$con = mysql_connect("localhost","root","");
+$con = mysqli_connect("localhost","root","");
 if (!$con)
 {
-die('Could not connect: ' . mysql_error());
+die('Could not connect: ' . mysqli_error());
 }
-mysql_select_db("lat_dbase", $con);
+mysqli_select_db("lat_dbase", $con);
 $sql="INSERT INTO tbl_mhs (FirstName, LastName, Age)
 VALUES
 ('$_POST[firstname]','$_POST[lastname]','$_POST[age]')";
-if (!mysql_query($sql,$con))
+if (!mysqli_query($sql,$con))
 {
-die('Error: ' . mysql_error());
+die('Error: ' . mysqli_error());
 }
 echo "1 record added";
-mysql_close($con)
+mysqli_close($con)
 ?>

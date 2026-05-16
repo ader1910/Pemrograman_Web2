@@ -1,10 +1,15 @@
 <?php
-$con = mysql_connect("localhost","root","");
+$con = mysqli_connect("localhost", "root", "");
 
-if (!$con)
-{
-die('Could not connect: ' . mysql_error());
+if (!$con) {
+    die('Could not connect: ' . mysqli_connect_error());
 }
-mysql_select_db("lat_dbase",$con);
-mysql_query("DELETE FROM tbl_mhs WHERE LastName='Prabowo'");
+
+mysqli_select_db($con, "lat_dbase");
+
+mysqli_query($con, "DELETE FROM tbl_mhs WHERE LastName='Prabowo'");
+
+mysqli_close($con);
+
+echo "Data berhasil dihapus!";
 ?>
