@@ -1,11 +1,8 @@
 <?php
-// =============================================
-// config/database.php — Konfigurasi Koneksi DB
-// =============================================
 
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');        // Ganti sesuai user MySQL kamu
-define('DB_PASS', '');            // Ganti sesuai password MySQL kamu
+define('DB_USER', 'root');        // Ganti sesuai user MySQL 
+define('DB_PASS', '');            // Ganti sesuai password MySQL 
 define('DB_NAME', 'db_mahasiswa');
 define('DB_CHARSET', 'utf8mb4');
 
