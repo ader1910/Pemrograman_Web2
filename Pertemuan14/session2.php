@@ -18,6 +18,7 @@ if (isset($_SESSION['login'])) {
 
 } else {
     //session belum ada artinya belum login
-    die("Anda belum login! Anda tidak berhak masuk ke halaman ini. Silakan login <a href='session1.php'>di sini</a>");  
+    die("Anda belum login! Anda tidak berhak masuk ke halaman ini.
+     Silakan login <a href='session1.php'>di sini</a>");  
 }
 ?>

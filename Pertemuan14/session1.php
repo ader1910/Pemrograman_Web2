@@ -16,7 +16,8 @@ if (isset($_POST['Login'])) {
         
         // Menampilkan pesan sukses
         echo "<h1>Anda berhasil LOGIN</h1>";
-        echo "<h2>Klik <a href='session2.php'>di sini (session2.php)</a> untuk menuju ke halaman pemeriksaan session</h2>";
+        echo "<h2>Klik <a href='session2.php'>di sini (session2.php)</a> 
+        untuk menuju ke halaman pemeriksaan session</h2>";
     } else {
         echo "<h1>Username atau Password Salah!</h1>";
         echo "<h2>Silakan <a href=''>Login Kembali</a></h2>";
